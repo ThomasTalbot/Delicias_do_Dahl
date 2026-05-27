@@ -24,7 +24,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Grain overlay em tudo */
 body::before {
     content: '';
     position: fixed;
@@ -35,7 +34,6 @@ body::before {
     opacity: 0.35;
 }
 
-/* ── NAVBAR ── */
 .navecabeção {
     display: flex;
     align-items: center;
@@ -88,14 +86,13 @@ body::before {
     text-shadow: 0 0 12px rgba(201, 168, 76, 0.6);
 }
 
-/* ── HERO ── */
 .hero {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(Espaguetão.png);
+    background-image: url('sushi1.webp');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -162,7 +159,6 @@ body::before {
     letter-spacing: 1px;
 }
 
-/* Linha decorativa */
 .hero-divider {
     width: 80px;
     height: 1px;
@@ -170,7 +166,6 @@ body::before {
     margin: 0 auto 40px;
 }
 
-/* ── BOTÃO ── */
 .btn {
     display: inline-block;
     background: transparent;
@@ -207,7 +202,6 @@ body::before {
     transform: scaleX(1);
 }
 
-/* ── SEÇÕES ── */
 .destaques,
 .menu {
     padding: 90px 60px;
@@ -246,7 +240,6 @@ body::before {
     margin-top: 8px;
 }
 
-/* ── CARDS ── */
 .cards {
     display: flex;
     justify-content: center;
@@ -338,7 +331,6 @@ body::before {
     padding: 10px 20px;
 }
 
-/* ── MENU DETALHADO ── */
 .menu-detalhado {
     padding: 60px;
 }
@@ -423,7 +415,6 @@ body::before {
     margin-bottom: 24px;
 }
 
-/* ── BOTÃO DE PEDIDO ── */
 .pedido {
     padding: 14px 36px;
     border: none;
@@ -456,7 +447,6 @@ body::before {
     transform: translateX(100%);
 }
 
-/* ── RODAPÉ DRAMÁTICO ── */
 .rodape-drama {
     text-align: center;
     padding: 60px;
@@ -466,4 +456,128 @@ body::before {
     font-style: italic;
     color: rgba(245,240,232,0.25);
     letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+
+    
+    .navecabeção {
+        flex-direction: column;
+        padding: 16px 20px;
+        gap: 12px;
+    }
+
+    .navecabeção ul {
+        position: static;
+        transform: none;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navecabeção h1 {
+        font-size: 22px;
+    }
+
+    
+    .hero {
+        height: 85vh;
+        padding: 0 20px;
+    }
+
+    .hero h2 {
+        font-size: clamp(32px, 9vw, 52px);
+    }
+
+    .hero-sub {
+        font-size: 16px;
+    }
+
+    .hero-tagline {
+        font-size: 9px;
+        letter-spacing: 4px;
+    }
+
+    
+    .destaques,
+    .menu {
+        padding: 50px 20px;
+    }
+
+    
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    
+    .menu-detalhado {
+        padding: 30px 20px;
+    }
+
+    .menu-detalhado section {
+        flex-direction: column !important;
+        gap: 24px;
+        padding: 40px 0;
+    }
+
+    .menu-detalhado img {
+        width: 100%;
+        height: 240px;
+        flex-shrink: unset;
+    }
+
+    .menu-detalhado h2 {
+        font-size: clamp(24px, 6vw, 36px);
+    }
+
+    .menu-detalhado p {
+        font-size: 15px;
+    }
+
+    .prato-preco {
+        font-size: 26px;
+    }
+
+    
+    .rodape-drama {
+        padding: 30px 20px;
+        font-size: 11px;
+    }
+
+    
+    .pedido {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .navecabeção h1 {
+        font-size: 18px;
+    }
+
+    .navecabeção a {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .hero h2 {
+        font-size: clamp(28px, 10vw, 42px);
+    }
+
+    .hero-sub {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
 }
