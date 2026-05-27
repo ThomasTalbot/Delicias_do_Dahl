@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vermelho: #c0392b;
+    --vermelho-escuro: #7b1010;
+    --dourado: #c9a84c;
+    --dourado-claro: #f0d080;
+    --preto: #080808;
+    --preto-medio: #131313;
+    --branco: #f5f0e8;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: var(--preto);
+    color: var(--branco);
+    cursor: default;
+    overflow-x: hidden;
+}
+
+/* Grain overlay em tudo */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.35;
+}
+
+/* ── NAVBAR ── */
+.navecabeção {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 60px;
+    background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.85) 100%);
+    border-bottom: 1px solid rgba(192, 57, 43, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.navecabeção h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--branco);
+    letter-spacing: 1px;
+}
+
+.navecabeção h1 span {
+    color: var(--vermelho);
+    text-shadow: 0 0 20px rgba(192,57,43,0.8);
+}
+
+.navecabeção ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navecabeção a {
+    text-decoration: none;
+    color: var(--branco);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.navecabeção a:hover {
+    color: var(--dourado);
+    opacity: 1;
+    text-shadow: 0 0 12px rgba(201, 168, 76, 0.6);
+}
+
+/* ── HERO ── */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(Espaguetão.png);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.3) 0%,
+        rgba(8,8,8,0.6) 50%,
+        rgba(8,8,8,0.95) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-tagline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 8px;
+    color: var(--dourado);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 88px);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1.05;
+    text-shadow: 2px 4px 30px rgba(0,0,0,0.9);
+    max-width: 900px;
+    margin-bottom: 16px;
+}
+
+.hero h2 em {
+    color: var(--vermelho);
+    font-style: italic;
+}
+
+.hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(245,240,232,0.75);
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* Linha decorativa */
+.hero-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+    margin: 0 auto 40px;
+}
+
+/* ── BOTÃO ── */
+.btn {
+    display: inline-block;
+    background: transparent;
+    color: var(--branco);
+    border: 1px solid var(--dourado);
+    padding: 14px 36px;
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--vermelho);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.btn:hover {
+    border-color: var(--vermelho);
+    color: white;
+    text-shadow: none;
+}
+
+.btn:hover::before {
+    transform: scaleX(1);
+}
+
+/* ── SEÇÕES ── */
+.destaques,
+.menu {
+    padding: 90px 60px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: var(--vermelho);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.destaques h2,
+.menu h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-sub {
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(245,240,232,0.5);
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* ── CARDS ── */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 310px;
+    background-color: var(--preto-medio);
+    border: 1px solid rgba(201,168,76,0.15);
+    overflow: hidden;
+    transition: 0.4s;
+    position: relative;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--vermelho), transparent);
+    transform: scaleX(0);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(201,168,76,0.4);
+    box-shadow: 0 20px 60px rgba(192,57,43,0.2);
+}
+
+.card:hover::after {
+    transform: scaleX(1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: saturate(0.85);
+    transition: 0.4s;
+}
+
+.card:hover img {
+    filter: saturate(1.1);
+    transform: scale(1.03);
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    margin: 18px 18px 6px;
+}
+
+.card p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(245,240,232,0.6);
+    font-style: italic;
+    margin: 0 18px 10px;
+}
+
+.card strong {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--dourado);
+    letter-spacing: 2px;
+    margin: 0 18px 16px;
+}
+
+.card span {
+    display: block;
+    margin: 0 18px 16px;
+    color: var(--vermelho);
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.card .btn {
+    display: block;
+    margin: 0 18px 18px;
+    text-align: center;
+    font-size: 11px;
+    padding: 10px 20px;
+}
+
+/* ── MENU DETALHADO ── */
+.menu-detalhado {
+    padding: 60px;
+}
+
+.menu-detalhado section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 70px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    position: relative;
+}
+
+.menu-detalhado section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.menu-detalhado section::before {
+    content: attr(data-numero);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 180px;
+    color: rgba(255,255,255,0.02);
+    pointer-events: none;
+    letter-spacing: -5px;
+}
+
+.menu-detalhado img {
+    width: 420px;
+    height: 300px;
+    object-fit: cover;
+    filter: saturate(0.8) contrast(1.1);
+    transition: 0.6s;
+    flex-shrink: 0;
+}
+
+.menu-detalhado img:hover {
+    filter: saturate(1.2) contrast(1.05);
+    transform: scale(1.03);
+}
+
+.menu-detalhado .prato-info {
+    flex: 1;
+}
+
+.prato-numero {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--vermelho);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.menu-detalhado h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 44px);
+    font-style: italic;
+    font-weight: 900;
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.menu-detalhado p {
+    font-size: 17px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.prato-preco {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--dourado);
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 24px;
+}
+
+/* ── BOTÃO DE PEDIDO ── */
+.pedido {
+    padding: 14px 36px;
+    border: none;
+    background: var(--vermelho);
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.pedido::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: 0.5s;
+}
+
+.pedido:hover {
+    background: var(--vermelho-escuro);
+    letter-spacing: 6px;
+}
+
+.pedido:hover::after {
+    transform: translateX(100%);
+}
+
+/* ── RODAPÉ DRAMÁTICO ── */
+.rodape-drama {
+    text-align: center;
+    padding: 60px;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: rgba(245,240,232,0.25);
+    letter-spacing: 2px;
+}

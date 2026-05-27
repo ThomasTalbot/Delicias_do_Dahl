@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Detalhado — Delícias do Dahl</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <nav class="navecabeção">
+        <h1><em>Delícias do <span>Dahl</span></em></h1>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="cardapio.html">Cardápio</a></li>
+            <li><a href="menu-detalhado.html">Menu Detalhado</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="menu-detalhado">
+
+    <section id="combo" data-numero="01">
+        <img src="ComboDahl.png" alt="Combo Premium">
+        <div class="prato-info">
+            <span class="prato-numero">✦ 01</span>
+            <h2>Combo Premium</h2>
+            <p>
+                Peças variadas de sushi, sashimi e Hot Dahls cuidadosamente selecionadas.
+                Uma obra coletiva que só um homem de visão seria capaz de montar.
+                Vinte peças. Nenhuma decepção.
+            </p>
+            <span class="prato-preco">R$ 89,90</span>
+            <button class="pedido" onclick="realizarPedido()">FAZER PEDIDO</button>
+        </div>
+    </section>
+
+    <section id="hotroll" data-numero="02">
+        <img src="HotDahl.png" alt="Hot Dahl">
+        <div class="prato-info">
+            <span class="prato-numero">✦ 02</span>
+            <h2>Hot Dahl</h2>
+            <p>
+                8 Hot Dahls com salmão, arroz japonês, alga nori, cream cheese,
+                farinha panko e o segredinho do <strong>Chef</strong>.
+                Crocante por fora, surpreendente por dentro —
+                exatamente como o próprio Dahl.
+            </p>
+            <span class="prato-preco">R$ 39,90</span>
+            <button class="pedido" onclick="realizarPedido()">FAZER PEDIDO</button>
+        </div>
+    </section>
+
+    <section id="sashimi" data-numero="03">
+        <img src="SashimiDahl.png" alt="Dahl Cru">
+        <div class="prato-info">
+            <span class="prato-numero">✦ 03</span>
+            <h2>Dahl Cru</h2>
+            <p>8 fatias de salmão fresco. Sem artifícios. Sem disfarces.
+                O Dahl na sua forma mais pura e honesta —
+                o que, convenhamos, é uma raridade.</p>
+            <span class="prato-preco">R$ 49,90</span>
+            <button class="pedido" onclick="realizarPedido()">FAZER PEDIDO</button>
+        </div>
+    </section>
+
+    <section id="temaki" data-numero="04">
+        <img src="TemakiDahl.png" alt="Cone do Dahl">
+        <div class="prato-info">
+            <span class="prato-numero">✦ 04</span>
+            <h2>Cone do Dahl</h2>
+            <p>
+                Nori, arroz, salmão e cebolinha.
+                Sem cream cheese — porque o Dahl tem princípios
+                (somente aqui, aparentemente). 😏
+                Uma experiência que você não vai querer terminar.
+            </p>
+            <span class="prato-preco">R$ 29,90</span>
+            <button class="pedido" onclick="realizarPedido()">FAZER PEDIDO</button>
+        </div>
+    </section>
+
+    <section id="uramaki" data-numero="05">
+        <img src="DahlUrumaki.png" alt="Uramaki">
+        <div class="prato-info">
+            <span class="prato-numero">✦ 05</span>
+            <h2>Uramaki</h2>
+            <p>
+                8 rolls com salmão, cream cheese e arroz japonês.
+                Clássico, elegante, infalível —
+                três adjetivos que raramente se aplicam ao chef, mas ao prato, sim.
+            </p>
+            <span class="prato-preco">R$ 39,90</span>
+            <button class="pedido" onclick="realizarPedido()">FAZER PEDIDO</button>
+        </div>
+    </section>
+
+    <section id="yakisoba" data-numero="06">
+        <img src="Espaguetão.png" alt="Espaguetão do Dahl">
+        <div class="prato-info">
+            <span class="prato-numero">✦ 06</span>
+            <h2>Espaguetão do Dahl</h2>
+            <p>
+                Massa para yakisoba, repolho roxo, cenoura, brócolis,
+                molho shoyo, Tonkatsu, Hondashi, Ajinomoto, alho e óleo de gergelim.
+                Uma receita com mais ingredientes do que o Dahl tem
+                paciência — e ainda assim, funciona.
+            </p>
+            <span class="prato-preco">R$ 44,90</span>
+            <button class="pedido" onclick="realizarPedido()">FAZER PEDIDO</button>
+        </div>
+    </section>
+
+</main>
+
+<footer class="rodape-drama">
+    <p>© Delícias do Dahl — Estabelecimento fictício e zueira.</p>
+</footer>
+
+<script>
+    function realizarPedido() {
+        const msgs = [
+            "Pedido realizado! O Dahl já está suando na cozinha.",
+            "Compra confirmada! Ele vai fazer isso com um sorriso no rosto.",
+            "Pedido aceito! Diz que vai chegar em 30 minutos mas já sabe como é.",
+            "Beleza! Seu pedido foi enviado para as mãos talentosas do Chef."
+        ];
+        alert(msgs[Math.floor(Math.random() * msgs.length)]);
+    }
+</script>
+
+</body>
+</html>
